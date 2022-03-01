@@ -17,7 +17,7 @@ class Actor:
 
     def __init__(self):
         """Constructs a new Actor."""
-      
+        self._text = ""
         self._font_size = 15
         self._color = Color(255, 255, 255)
         self._position = Point(0, 0)
@@ -65,7 +65,7 @@ class Actor:
         """
         return self._velocity
     
-    def move_next(self, max_x):
+    def move_next(self, max_x, max_y):
         """Moves the actor to its next position according to its velocity. Will wrap the position 
         from one side of the screen to the other when it reaches the given maximum x 
         
@@ -74,8 +74,10 @@ class Actor:
             
         """
         x = (self._position.get_x() + self._velocity.get_x()) % max_x
+        y = (self._position.get_y() + self._velocity.get_y()) % max_y
+        self._position = Point(x, y)
         
-        self._position = Point(x)
+        
 
     def set_color(self, color):
         """Updates the color to the given one.
