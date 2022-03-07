@@ -61,14 +61,15 @@ class Director:
         
         for artifact in artifacts:
             artifact.move_next(max_x ,max_y) #añadido
-            if robot.get_position().equals(artifact.get_position()):                
-                if artifact.get_text() == "*": 
-                    message1 = artifact.get_add_point()
-                    self._score += message1
+            if robot.get_position().equals(artifact.get_position()):
+                if artifact.get_text() == "O": 
+                    message1 = artifact.get_take_point()
+                    self._score += message1                
                 else:
-                    if artifact.get_text() == "O": 
-                        message1 = artifact.get_take_point()
-                        self._score -= message1
+                    if artifact.get_text() == "*": 
+                        message1 = artifact.get_add_point()
+                        self._score += message1
+
         banner.set_text(f'score: {self._score}')   
                 
         
