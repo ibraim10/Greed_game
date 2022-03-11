@@ -52,13 +52,6 @@ def main():
     robot.set_position(position)
     cast.add_actor("robots", robot)
     
-    # create the artifacts
-    #with open(DATA_PATH) as file:
-        #data = file.read()
-        #messages = data.splitlines()
-    
-
-
 
     for n in range(DEFAULT_ARTIFACTS):
         text = ["*","O"] 
@@ -81,9 +74,9 @@ def main():
         artifact.set_font_size(FONT_SIZE)
         artifact.set_color(color)
         artifact.set_position(position)
-        artifact.set_velocity(Point(0,1))#añadido para probar
+        artifact.set_velocity(Point(0,1))
         
-        cast.add_actor("artifacts", artifact) #añade al cast
+        cast.add_actor("artifacts", artifact) 
     
     # start the game
     keyboard_service = KeyboardService(CELL_SIZE)
