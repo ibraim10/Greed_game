@@ -30,10 +30,4 @@ class Artifact(Actor):
         self._score -= 1
         return self._score
     
-    #def set_take_point(self, message):
-        #"""Updates the message to the given one.
-        
-        #Args:
-            #message (string): The given message.
-        #"""
-        #self._message = message
+    
